@@ -12,7 +12,7 @@ interface Project {
   title: string;
   description: string;
   tags: string[];
-  githubLink: string; // Optional githubLink
+  githubLink: string;
   public: boolean;
 }
 
@@ -21,31 +21,60 @@ interface ProjectsSectionProps {
 }
 
 const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) => {
-  // Set initial visible projects to 5
-  const [visibleProjects, setVisibleProjects] = useState(3);
-
-  // Toggle between showing all or just the initial set of projects
-  const handleSeeMoreClick = () => {
-    setVisibleProjects(visibleProjects === 3 ? projects.length : 3);
-  };
-
+  const INITIAL_VISIBLE = 3;
+  const [visibleProjects, setVisibleProjects] = useState(INITIAL_VISIBLE);
   const projectsRef = useRef<HTMLDivElement | null>(null);
 
+  // Track first render
+  const isFirstRender = useRef(true);
+
+  // Track scroll position when expanding
+  const scrollPosRef = useRef<number>(0);
+
+  const handleSeeMoreClick = () => {
+    if (visibleProjects === INITIAL_VISIBLE) {
+      // Save current scroll position
+      scrollPosRef.current = window.scrollY;
+      setVisibleProjects(projects.length); // Expand
+    } else {
+      // Collapse back to initial
+      setVisibleProjects(INITIAL_VISIBLE);
+    }
+  };
+
   useEffect(() => {
-    if (visibleProjects === 3 && projectsRef.current) {
-      projectsRef.current.scrollIntoView({ behavior: 'smooth' });
+    if (isFirstRender.current) {
+      isFirstRender.current = false;
+      return;
+    }
+
+    // If collapsing, scroll to the last project of the collapsed set
+    if (visibleProjects === INITIAL_VISIBLE && projectsRef.current) {
+      const lastVisibleProject = projectsRef.current.querySelector(
+        `div:nth-child(${INITIAL_VISIBLE})`
+      ) as HTMLElement | null;
+
+      if (lastVisibleProject) {
+        lastVisibleProject.scrollIntoView({ behavior: 'smooth' });
+      }
+    } 
+    // If expanding, stay in same scroll position
+    else if (visibleProjects > INITIAL_VISIBLE) {
+      window.scrollTo({ top: scrollPosRef.current, behavior: 'smooth' });
     }
   }, [visibleProjects]);
 
-
-
   return (
-    <section id="Projects" ref={projectsRef} className="px-6 xl:px-0 h-fit py-16 xl:pt-24 xl:pb-12">
+    <section
+      id="Projects"
+      ref={projectsRef}
+      className="px-6 xl:px-0 h-fit py-16 xl:pt-24 xl:pb-12"
+    >
       <div className="max-w-4xl mx-auto xl:mx-0">
         <h2 className="text-3xl md:text-4xl font-semibold text-left mb-4">
           Featured Projects
         </h2>
-        <p className='text-zinc-400 mb-8 text-md'>
+        <p className="text-zinc-400 mb-8 text-md">
           A curated collection of my software development projects from GitHub
         </p>
 
@@ -58,23 +87,24 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) => {
               {/* Left: Image */}
               <div className="mb-4 md:mb-0">
                 <Image
-                  src={project.source} // Use the imageUrl from the project data
+                  src={project.source}
                   alt={project.title}
-                  width={120} // Set smaller width for the image
-                  height={90} // Set smaller height for the image
+                  width={120}
+                  height={90}
                   className="h-40 md:h-full w-full md:w-50 object-cover rounded-lg"
                 />
               </div>
 
               {/* Right: Content */}
               <div className="flex flex-col justify-between ml-0 md:ml-4 w-full">
-                <p className='flex  text-green-700 animate-pulse xl:mb-2'>● {project.public ? 'Public' : 'Private'}</p>
+                <p className="flex text-green-700 animate-pulse xl:mb-2">
+                  ● {project.public ? 'Public' : 'Private'}
+                </p>
 
                 <div className="flex mb-4">
                   <h3 className="text-xl flex-1 font-semibold text-zinc-400 group-hover:text-purple-400 transition-colors duration-300">
                     {project.title}
                   </h3>
-                  {/* GitHub Link Button with Icon desktop */}
                   <a
                     href={project.githubLink}
                     target="_blank"
@@ -85,9 +115,11 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) => {
                     <span>View Code</span>
                   </a>
                 </div>
+
                 <p className="text-zinc-400 mb-4 text-sm leading-relaxed grow">
                   {project.description}
                 </p>
+
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.tags.map((tag) => (
                     <span
@@ -99,8 +131,10 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) => {
                   ))}
                 </div>
 
-                {/* GitHub Link Button with Icon mobile */}
-                <button type="button" className="md:hidden p-3 w-50 border border-purple-600 hover:bg-purple-800/10 flex justify-center rounded-2xl mx-auto">
+                <button
+                  type="button"
+                  className="md:hidden p-3 w-50 border border-purple-600 hover:bg-purple-800/10 flex justify-center rounded-2xl mx-auto"
+                >
                   <Link
                     href={project.githubLink}
                     target="_blank"
@@ -117,15 +151,14 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) => {
           ))}
         </div>
 
-        {/* See More Button */}
-        {projects.length > 5 && (
+        {projects.length > INITIAL_VISIBLE && (
           <div className="text-center mt-8">
             <button
-              type='button'
+              type="button"
               onClick={handleSeeMoreClick}
               className="border border-zinc-800 hover:border-purple-400 text-zinc-400 hover:text-purple-400 rounded-full py-2 px-6 text-lg transition-all duration-300"
             >
-              {visibleProjects === 3 ? 'See More' : 'See Less'}
+              {visibleProjects === INITIAL_VISIBLE ? 'See More' : 'See Less'}
             </button>
           </div>
         )}

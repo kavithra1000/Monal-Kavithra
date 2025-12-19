@@ -25,9 +25,8 @@ const Sidebar: React.FC<SidebarProps> = ({ scrollToSection }) => {
       {/* ===== Profile ===== */}
       <div className="px-6 pt-6">
         <div className="relative w-20 h-20 mb-4">
-          {/* Glow */}
-
-          <div className="relative w-20 h-20 rounded-full overflow-hidden border border-zinc-700">
+          {/* Profile Image with border change on sidebar hover */}
+          <div className="relative w-20 h-20 rounded-full overflow-hidden border border-zinc-700 transition-colors duration-300 group-hover:border-purple-500/30">
             <Image
               src="/your-image.png"
               alt="Monal Kavithra"
@@ -51,7 +50,8 @@ const Sidebar: React.FC<SidebarProps> = ({ scrollToSection }) => {
           applications with modern technologies.
         </p>
 
-        <div className="border-b border-zinc-800/70 my-5" />
+        {/* Middle line with border change on sidebar hover */}
+        <div className="border-b border-zinc-800/70 my-5 transition-colors duration-300 group-hover:border-purple-500/30" />
       </div>
 
       {/* ===== Navigation ===== */}

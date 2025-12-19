@@ -35,9 +35,7 @@ const NavBar: React.FC<NavBarProps> = ({
       className={`
         fixed top-0 w-full z-50 transition-all duration-500
         ${isXL && isScrolled ? '-translate-y-full opacity-0' : 'translate-y-0 opacity-100'}
-        ${isScrolled
-          ? ''
-          : 'bg-transparent'}
+        ${!isXL ? 'backdrop-blur-xl border-b border-zinc-800 bg-zinc-950/70' : ''}
       `}
     >
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
@@ -56,7 +54,7 @@ const NavBar: React.FC<NavBarProps> = ({
             return (
               <li key={section} className="relative">
                 <button
-                  type='button'
+                  type="button"
                   onClick={() => scrollToSection(section)}
                   className={`
                     text-sm font-medium transition-colors duration-300 cursor-pointer

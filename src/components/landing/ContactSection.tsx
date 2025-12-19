@@ -1,5 +1,6 @@
 'use client'
 
+import { Mail } from 'lucide-react';
 import React from 'react';
 
 const socials = [
@@ -8,7 +9,7 @@ const socials = [
     link: 'https://github.com/kavithra1000'
   },
   {
-    name: 'Linkedin',
+    name: 'LinkedIn',
     link: 'https://www.linkedin.com/in/monal-kavithra/'
   },
   {
@@ -19,7 +20,7 @@ const socials = [
     name: 'Dribbble',
     link: ''
   }
-]
+];
 
 const ContactSection: React.FC = () => {
   return (
@@ -32,7 +33,7 @@ const ContactSection: React.FC = () => {
         <div className="text-center">
           <h2 className="text-5xl xl:text-7xl font-bold mb-6">
             Get In{' '}
-            <span className="bg-linear-to-r from-purple-500  to-blue-600 bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-purple-500 to-blue-600 bg-clip-text text-transparent">
               Touch
             </span>
           </h2>
@@ -44,29 +45,35 @@ const ContactSection: React.FC = () => {
 
           {/* Primary CTA */}
           <a
-            href="mailto:your.email@example.com"
-            className="inline-block px-10 py-4 rounded-full font-semibold text-white
-              bg-linear-to-r from-indigo-500 to-purple-600
-              hover:scale-105 transition-all duration-300
-              hover:shadow-lg hover:shadow-purple-500/40 mb-12 animate-bounce"
+            href="mailto:monalwickramasinghe@gmail.com"
+            className="w-full max-w-60 px-6 py-4 rounded-full font-semibold text-white
+            bg-linear-to-r from-indigo-500 to-purple-600
+            hover:scale-105 transition-all duration-300
+            hover:shadow-lg mb-12 flex items-center justify-center gap-2 mx-auto animate-bounce"
           >
-            Send Me an Email
+            <span>Send Me an Email</span>
+            <Mail size={24} />
           </a>
 
           {/* Social Links */}
           <div className="flex justify-center gap-8 text-base md:text-lg">
-            {socials.map((social) => (
-              <a
-                key={social.name}
-                href={social.link}
-                className="relative text-zinc-400 transition-colors duration-300
-                  hover:text-purple-400 after:absolute after:left-0 after:-bottom-1
-                  after:h-0.5 after:w-0 after:bg-purple-400
-                  hover:after:w-full after:transition-all after:duration-300"
-              >
-                {social.name}
-              </a>
-            ))}
+            {socials.map(
+              (social) =>
+                social.link && (
+                  <a
+                    key={social.name}
+                    href={social.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="relative text-zinc-400 transition-colors duration-300
+                      hover:text-purple-400 after:absolute after:left-0 after:-bottom-1
+                      after:h-0.5 after:w-0 after:bg-purple-400
+                      hover:after:w-full after:transition-all after:duration-300"
+                  >
+                    {social.name}
+                  </a>
+                )
+            )}
           </div>
         </div>
       </div>
