@@ -59,8 +59,8 @@ const Portfolio: React.FC = () => {
       title: 'E-Commerce Website for Printer Shop - B Tech',
       description: 'A full-stack e-commerce solution with user authentication, shopping cart functionality, and payment integration.',
       tags: ['MongoDB', 'Express.js', 'React.js', 'Node.js', 'JWT Authentication'],
-      githubLink: '',
-      public: false
+      githubLink: 'https://github.com/kavithra1000/B-Tech-Printers',
+      public: true
     },
     {
       source: '/git-icon/doculence.png',
