@@ -36,14 +36,13 @@ const Portfolio: React.FC = () => {
     {
       source: '/git-icon/livedoc.png',
       id: 2,
-      title: 'LiveDoc-Live collobarating platform',
-      description: 'A real-time document creating and shairing app liveblocks integration for instant communication.',
+      title: 'LiveDoc - Live Collaboration Platform',
+      description: 'A real-time document creation and sharing app with Liveblocks integration for instant collaboration.',
       tags: ['JavaScript', 'HTML', 'CSS'],
       githubLink: 'https://github.com/kavithra1000/LiveDocs',
       public: true
     },
     {
-
       source: '/git-icon/chat.png',
       id: 3,
       title: 'Chat Application (MERN Stack)',
@@ -53,7 +52,6 @@ const Portfolio: React.FC = () => {
       public: true
     },
     {
-
       source: '/git-icon/B-Tech.png',
       id: 4,
       title: 'E-Commerce Website for Printer Shop - B Tech',
@@ -65,8 +63,8 @@ const Portfolio: React.FC = () => {
     {
       source: '/git-icon/doculence.png',
       id: 5,
-      title: 'DocuLens (Web Content Extraction & AI Chat Tool) - Frontend',
-      description: 'A platform for extracting, summarizing, and interacting with web content through AI-powered chat.',
+      title: 'DocuLens (Frontend) - Web Content Extraction & AI Chat Tool',
+      description: 'A platform for extracting, summarizing, and interacting with web content through an AI-powered chat interface.',
       tags: ['MongoDB', 'Express.js', 'React.js', 'Node.js', 'JWT Authentication', 'OpenAI API', 'Zustand'],
       githubLink: 'https://github.com/kavithra1000/doculence-ai-frontend',
       public: true
@@ -74,24 +72,22 @@ const Portfolio: React.FC = () => {
     {
       source: '/git-icon/doculence.png',
       id: 6,
-      title: 'DocuLens (Web Content Extraction & AI Chat Tool) - Backend',
-      description: 'A platform for extracting, summarizing, and interacting with web content through AI-powered chat.',
+      title: 'DocuLens (Backend) - Web Content Extraction & AI Chat Tool',
+      description: 'The backend of a platform for extracting, summarizing, and interacting with web content through an AI-powered chat interface.',
       tags: ['MongoDB', 'Express.js', 'React.js', 'Node.js', 'JWT Authentication', 'OpenAI API', 'Zustand'],
       githubLink: 'https://github.com/kavithra1000/doculence-ai-backend',
       public: true
     },
     {
-
       source: '/git-icon/cocktail.png',
       id: 7,
-      title: 'Mojito Cocktail Landing Page with GSAP Animations - Frontend',
-      description: 'A dynamic landing page for a cocktail shop featuring smooth animations with GSAP and a modern UI built with React and Tailwind CSS.',
+      title: 'Mojito Cocktail Landing Page - Frontend',
+      description: 'A dynamic landing page for a cocktail shop with smooth GSAP animations and a modern UI built with React and Tailwind CSS.',
       tags: ['React.js', 'GSAP', 'Tailwind CSS'],
       githubLink: 'https://github.com/kavithra1000/mojito-cocktail',
       public: true
     },
     {
-
       source: '/git-icon/git.png',
       id: 8,
       title: 'Web Summarizer Extension',
@@ -100,10 +96,7 @@ const Portfolio: React.FC = () => {
       githubLink: 'https://github.com/kavithra1000/Pocket-GPT-Browser-Extension',
       public: true
     },
-  ];
-
-
-
+  ]
 
   const scrollToSection = (sectionId: string) => {
     setActiveSection(sectionId);
