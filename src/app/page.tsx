@@ -1,5 +1,5 @@
 'use client'
-import Portfolio from "@/components/landing2/Portfolio"
+import Portfolio from "@/components/landing/Portfolio"
 
 
 const page = () => {
