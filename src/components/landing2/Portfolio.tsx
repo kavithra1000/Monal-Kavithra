@@ -8,6 +8,7 @@ import SkillsSection from './SkillSection';
 import ContactSection from './ContactSection';
 import Sidebar from './Sidebar';
 import Education from './Education';
+import About from './About';
 
 const Portfolio: React.FC = () => {
   const [activeSection, setActiveSection] = useState('home');
@@ -138,6 +139,7 @@ const Portfolio: React.FC = () => {
 
             {/* Main Content Area */}
             <div className="flex-1 ml-0">
+              <About />
               <Education />
               <ProjectsSection projects={projects} />
               <SkillsSection />
