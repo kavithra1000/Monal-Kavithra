@@ -14,6 +14,7 @@ interface Project {
   tags: string[];
   githubLink: string;
   public: boolean;
+  inProgress: boolean;
 }
 
 interface ProjectsSectionProps {
@@ -98,7 +99,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) => {
               {/* Right: Content */}
               <div className="flex flex-col justify-between ml-0 md:ml-4 w-full">
                 <p className="flex text-green-700 animate-pulse xl:mb-2">
-                  ● {project.public ? 'Public' : 'Private'}
+                  ● {project.public ? 'Public' : 'Private'} {'  '} {project.inProgress ? 'In-progress' : ''}
                 </p>
 
                 <div className="flex mb-4">
