@@ -98,8 +98,8 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) => {
 
               {/* Right: Content */}
               <div className="flex flex-col justify-between ml-0 md:ml-4 w-full">
-                <p className="flex text-green-700 animate-pulse xl:mb-2">
-                  ● {project.public ? 'Public' : 'Private'} {'  '} {project.inProgress ? 'In-progress' : ''}
+                <p className="flex text-green-700 animate-pulse xl:mb-2 items-center gap-4">
+                  <span className=' '>● {project.public ? 'Public' : 'Private'} </span> <span className='pr-2 text-purple-700'>{project.inProgress ? '● In-progress' : ''}</span>
                 </p>
 
                 <div className="flex mb-4">
