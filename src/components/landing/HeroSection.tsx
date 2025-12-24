@@ -37,7 +37,7 @@ const HeroSection: React.FC = () => {
         {/* CTA */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mt-20 sm:mt-25">
           <a
-            href="/Monal_Kavithra_CV.pdf"
+            href="/resume/Monal_Kavithra.pdf"
             download="Monal_Kavithra_CV.pdf"
             className="flex gap-3 items-center px-8 py-4 rounded-2xl font-semibold text-white
               bg-linear-to-r from-indigo-500 to-purple-600
