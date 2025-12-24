@@ -13,8 +13,8 @@ const Sidebar: React.FC<SidebarProps> = ({ scrollToSection }) => {
       className="
         group
         w-80
-        rounded-xl
-        bg-zinc-900/70 backdrop-blur-xl
+        rounded-xl bg-transparent
+        backdrop-blur-xl
         border border-zinc-800/70
         shadow-[0_0_30px_rgba(0,0,0,0.35)]
         transition-all duration-300
