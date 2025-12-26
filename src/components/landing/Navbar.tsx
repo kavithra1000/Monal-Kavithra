@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useEffect, useState } from 'react'
+import Image from 'next/image'
 
 const sections = ['Home', 'About', 'Education', 'Projects', 'Skills', 'Contact']
 
@@ -35,16 +36,16 @@ const NavBar: React.FC<NavBarProps> = ({
       className={`
         fixed top-0 w-full z-50 transition-all duration-500
         ${isXL && isScrolled ? '-translate-y-full opacity-0' : 'translate-y-0 opacity-100'}
-        ${!isXL ? 'backdrop-blur-xl border-b border-zinc-800 bg-zinc-950/70' : ''}
+        ${!isXL ? 'backdrop-blur-xl border-b border-zinc-800 bg-zinc-950/60' : ''}
       `}
     >
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
         <div
           onClick={() => scrollToSection('Home')}
-          className="text-2xl font-bold bg-linear-to-r from-purple-500 to-blue-600 bg-clip-text text-transparent story-script-regular cursor-pointer"
+          className="cursor-pointer"
         >
-          monal.
+          <Image src={'/logo.png'} alt='logo' width={40} height={30}/>
         </div>
 
         {/* Desktop Menu */}

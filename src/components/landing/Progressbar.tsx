@@ -26,7 +26,7 @@ const ProgressBar = () => {
   return (
     <div
       ref={progressRef}
-      className="fixed top-0 left-0 h-1 w-full bg-violet-600 origin-left scale-x-0 z-50"
+      className="fixed top-0 left-0 h-1 w-full bg-violet-600/75 origin-left scale-x-0 z-50"
     />
   )
 }

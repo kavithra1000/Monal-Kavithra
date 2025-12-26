@@ -9,7 +9,7 @@ import ContactSection from './ContactSection';
 import Sidebar from './Sidebar';
 import Education from './Education';
 import About from './About';
-import { GrInProgress } from 'react-icons/gr';
+import ProgressBar from './Progressbar';
 
 const Portfolio: React.FC = () => {
   const [activeSection, setActiveSection] = useState('home');
@@ -118,6 +118,7 @@ const Portfolio: React.FC = () => {
 
   return (
     <>
+      <ProgressBar/>
       <div className="fixed inset-0 bg-linear-to-br z-10 from-purple-500/10 via-transparent to-pink-500/10 animate-pulse animate-8s scroll-smooth" />
       <div className="fixed inset-0 bg-linear-to-br z-10 from-purple-500/10 via-transparent to-pink-500/10 animate-pulse animate-8s scroll-smooth" />
 

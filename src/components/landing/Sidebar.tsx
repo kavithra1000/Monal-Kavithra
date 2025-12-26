@@ -13,13 +13,14 @@ const Sidebar: React.FC<SidebarProps> = ({ scrollToSection }) => {
       className="
         group
         w-80
-        rounded-xl bg-transparent
+        rounded-xl
         backdrop-blur-xl
         border border-zinc-800/70
         shadow-[0_0_30px_rgba(0,0,0,0.35)]
         transition-all duration-300
         flex flex-col justify-between
         hover:border-purple-500/30
+        bg-zinc-950/60
       "
     >
       {/* ===== Profile ===== */}
