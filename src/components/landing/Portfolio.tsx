@@ -122,7 +122,7 @@ const Portfolio: React.FC = () => {
       <div className="fixed inset-0 bg-linear-to-br z-10 from-purple-500/10 via-transparent to-pink-500/10 animate-pulse animate-8s scroll-smooth" />
       <div className="fixed inset-0 bg-linear-to-br z-10 from-purple-500/10 via-transparent to-pink-500/10 animate-pulse animate-8s scroll-smooth" />
 
-      <div className="relative min-h-screen bg-zinc-950 text-white required:">
+      <div className="relative min-h-screen bg-zinc-950 text-white required: ">
         <div className="relative z-11">
           <NavBar
             activeSection={activeSection}
