@@ -26,8 +26,18 @@ const Portfolio: React.FC = () => {
 
   const projects = [
     {
-      source: '/git-icon/mchat.png',
+      source: '/git-icon/FinanceFlow.png',
       id: 1,
+      title: 'AI-Based Financial Document Processing Tool',
+      description: 'AI-assisted system to extract and normalize transaction data from bank statement PDFs',
+      tags: ['TypeScript', 'Nextjs', 'Tailwind', 'Clerk', 'Neondb'],
+      githubLink: 'https://github.com/kavithra1000/FinanceFlow',
+      public: true,
+      inProgress: false,
+    },
+    {
+      source: '/git-icon/mchat.png',
+      id: 2,
       title: 'Chat-GPT Message Store Extension',
       description: 'A browser extension that stores and organizes ChatGPT messages in an interactive container.',
       tags: ['JavaScript', 'HTML', 'CSS'],
@@ -35,16 +45,7 @@ const Portfolio: React.FC = () => {
       public: true,
       inProgress: false,
     },
-    {
-      source: '/git-icon/livedoc.png',
-      id: 2,
-      title: 'LiveDoc - Live Collaboration Platform',
-      description: 'A real-time document creation and sharing app with Liveblocks integration for instant collaboration.',
-      tags: ['JavaScript', 'HTML', 'CSS'],
-      githubLink: 'https://github.com/kavithra1000/LiveDocs',
-      public: true,
-      inProgress: true,
-    },
+    
     {
       source: '/git-icon/chat.png',
       id: 3,
@@ -104,6 +105,16 @@ const Portfolio: React.FC = () => {
       githubLink: 'https://github.com/kavithra1000/Pocket-GPT-Browser-Extension',
       public: true,
       inProgress: false,
+    },
+    {
+      source: '/git-icon/livedoc.png',
+      id: 9,
+      title: 'LiveDoc - Live Collaboration Platform',
+      description: 'A real-time document creation and sharing app with Liveblocks integration for instant collaboration.',
+      tags: ['JavaScript', 'HTML', 'CSS'],
+      githubLink: 'https://github.com/kavithra1000/LiveDocs',
+      public: true,
+      inProgress: true,
     },
   ]
 

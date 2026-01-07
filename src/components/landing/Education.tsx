@@ -7,12 +7,12 @@ const edu = [{
   place: 'Sri Lanka Institute of Information Technology',
   source: '/education/SLIIT_Logo_Crest.png'
 },{
-  qulification: 'Advance Level',
+  qulification: 'General Certificate of Education Advanced Level',
   year: '2020 - 2023',
   place: 'Ruwannwella Rajasinghe College',
   source: '/education/rcc.jpg'
 },{
-  qulification: 'Ordinary Level',
+  qulification: 'General Certificate of Education Ordinary Level',
   year: '2019',
   place: 'Seethawaka National College',
   source: '/education/smmv.png'
